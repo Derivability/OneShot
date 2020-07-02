@@ -657,10 +657,10 @@ class Companion():
                     filename = self.pixiewps_dir + '{}.run'.format(bssid.replace(':', '').upper())
                     with open(filename, 'r') as file:
                         t_pin = file.readline().strip()
-                        if input('[?] Use previous calculated PIN {}? [n/Y] '.format(t_pin)).lower() != 'n':
-                            pin = t_pin
-                        else:
-                            raise FileNotFoundError
+                        #if input('[?] Use previous calculated PIN {}? [n/Y] '.format(t_pin)).lower() != 'n':
+                        pin = t_pin
+                        #else:
+                        #    raise FileNotFoundError
                 except FileNotFoundError:
                     pin = self.generator.getLikely(bssid) or '12345670'
             else:
