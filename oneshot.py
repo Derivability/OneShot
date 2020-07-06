@@ -574,8 +574,8 @@ class Companion():
         filename = self.reports_dir + 'stored'
         dateStr = datetime.now().strftime("%d.%m.%Y %H:%M")
         with open(filename + '.txt', 'a', encoding='utf-8') as file:
-            file.write('{}\nBSSID: {}\nESSID: {}\nWPS PIN: {}\nWPA PSK: {}\n\n'.format(
-                        dateStr, bssid, essid, wps_pin, wpa_psk
+            file.write('BSSID: {}\nDatetime: {}\nESSID: {}\nWPS PIN: {}\nWPA PSK: {}\n\n'.format(
+                        bssid, dateStr, essid, wps_pin, wpa_psk
                     )
             )
         writeTableHeader = not os.path.isfile(filename + '.csv')
